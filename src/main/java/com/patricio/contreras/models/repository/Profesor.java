@@ -28,14 +28,14 @@ import lombok.NonNull;
 @NonNull
 @Entity
 @Table(name = "profesores")
-public class Profesor implements Serializable {
+public class Profesor extends Persona implements Serializable {
 	
-	@Id
+	/*@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(nullable = false)
-	private String nombre;
+	private String nombre;*/
 	
 	@Column(nullable = false)
 	private boolean activo;
@@ -48,13 +48,13 @@ public class Profesor implements Serializable {
 	@JoinColumn(name = "id_asignatura",referencedColumnName = "id")
 	private Asignatura asignaturas;
 	
-	@Column(name = "fecha_nacimiento")
+	/*@Column(name = "fecha_nacimiento")
 	private LocalDate fechaNacimiento;
 	
 	@PrePersist
 	public void prePersist() {
 		fechaNacimiento = LocalDate.now();
-	}
+	}*/
 	
 	//falta lo de colegio y asignatura las referencias
 	

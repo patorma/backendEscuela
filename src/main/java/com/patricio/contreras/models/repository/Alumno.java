@@ -28,14 +28,14 @@ import lombok.NonNull;
 @NonNull
 @Entity
 @Table(name = "alumnos")
-public class Alumno implements Serializable{
+public class Alumno extends Persona implements Serializable{
 	
-	@Id
+	/*@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(nullable = false)
-	private String nombre;
+	private String nombre;*/
 	
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "alumno",fetch = FetchType.LAZY)
 	private List<Nota> notas;
@@ -47,13 +47,13 @@ public class Alumno implements Serializable{
 			inverseJoinColumns =  @JoinColumn(name="id_asignatura"))
 	private List<Asignatura> asignaturas;
 	
-	@Column(name = "fecha_nacimiento")
+	/*@Column(name = "fecha_nacimiento")
 	private LocalDate fechaNacimiento;
 	
 	
 	public void prePersit() {
 		fechaNacimiento =LocalDate.now();
-	}
+	}*/
 	
 	//referencias a alumnoAsignatura
 	//referencia profesor
