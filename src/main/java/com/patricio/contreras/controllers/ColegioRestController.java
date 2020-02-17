@@ -87,7 +87,7 @@ public class ColegioRestController {
 	@PutMapping("/colegios/{id}")
 	public ResponseEntity<?> update(@RequestBody Colegio colegio,@PathVariable Long id){
 		
-		//Buscamos por id e3l colegio a modificar
+		//Buscamos por id el colegio a modificar
 		Colegio colegioActual = colegioService.findById(id);
 		
 		//Inicializamos el colegio con las actualizaciones realizadas
@@ -97,7 +97,7 @@ public class ColegioRestController {
 		
 		// en caso de no encontrar el colegio asociado a ese id
 		if(colegioActual == null) {
-			response.put("mensaje", "Error: no se pudo editar, el colegio ID: ".concat(id.toString().concat(" no existe en la base de datos!")));
+			response.put("mensaje", "Error: no se pudo editar el colegio ID: ".concat(id.toString().concat(" no existe en la base de datos!")));
 			return new ResponseEntity<Map<String, Object>>(response,HttpStatus.NOT_FOUND);
 		}
 		

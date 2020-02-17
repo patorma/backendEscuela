@@ -8,7 +8,7 @@ public interface IColegioService {
 	
 	public List<Colegio> findAll();
 	
-	public Colegio findById (Long id);
+	public Colegio findById(Long id);
 	
 	public Colegio save(Colegio colegio);
 	
